@@ -38,12 +38,23 @@ class CourseController extends Controller
     public function getProvince(Request $request) {
       // $query = 'select * from province';
       // $result = DB::select($query);
-      $query = 'select users.name, users.email, object.name from users join object
-       on users.id = object.user_id';
+      $query = 'select * from province';
       $result = DB::select($query);
       return response()->json([
         'status' => 200,
         'message' => 'Get list province successfully',
+        'data' => $result
+      ]);
+    }
+
+    public function getClass(Request $request) {
+      // $query = 'select * from province';
+      // $result = DB::select($query);
+      $query = 'select * from class';
+      $result = DB::select($query);
+      return response()->json([
+        'status' => 200,
+        'message' => 'Get list class successfully',
         'data' => $result
       ]);
     }

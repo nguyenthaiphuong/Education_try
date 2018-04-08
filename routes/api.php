@@ -18,6 +18,7 @@ Route::get('user-info', 'UserController@getUserInfo');
 Route::get('list-course', 'CourseController@listCourse');
 Route::get('add-course', 'CourseController@addCourse');
 Route::get('list-province', 'CourseController@getProvince');
+Route::get('list-class', 'CourseController@getClass');
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
